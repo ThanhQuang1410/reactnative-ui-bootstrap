@@ -1,39 +1,4 @@
-import React, { Component }  from 'react'
-import {View} from 'react-native'
-import {useBootstrap} from "./theme/index";
-import PropTypes from 'prop-types';
-
-class ViewBootstrap extends Component {
-    render() {
-        const {
-            style,
-            className,
-            children,
-            ...props
-        } = this.props;
-
-        const styleBlock = generateStyle(className);
-
-        return (
-            <View {...props} style={[style, styleBlock]}>
-                {children}
-            </View>
-        );
-    }
-}
-function generateStyle(className) {
-    if(typeof className === 'string') {
-        return styleBootstrap[className];
-    } else if (Array.isArray(className)) {
-        let styles = {};
-        className.forEach(item => {
-            styles = {...styles, ...styleBootstrap[item]}
-        });
-        console.log(styles)
-        return styles;
-    }
-}
-const styleBootstrap = {
+export const styleBootstrap = {
     'row' : {
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -41,8 +6,28 @@ const styleBootstrap = {
         padding: 5
     },
     'align-items-center' : {
-      justifyContent: 'center',
-      alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    'align-items-start' : {
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start'
+    },
+    'align-items-end' : {
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
+    },
+    'align-self-start' : {
+        alignSelf: 'flex-start',
+        justifySelf: 'flex-start'
+    },
+    'align-self-center' : {
+        alignSelf: 'center',
+        justifySelf: 'center'
+    },
+    'align-self-end' : {
+        alignSelf: 'flex-end',
+        justifySelf: 'flex-end'
     },
     'col' : {
         flexGrow: 1
@@ -64,6 +49,9 @@ const styleBootstrap = {
     },
     'col-9' : {
         width: (100*3/4) + "%"
+    },
+    'col-12' : {
+        width: "100%"
     },
     'offset-1' : {
         marginLeft: "8.333333%"
@@ -97,12 +85,11 @@ const styleBootstrap = {
     },
     'offset-11' : {
         marginLeft: "91.666667%"
+    },
+    'd-block' : {
+        display: 'flex'
+    },
+    'd-none' : {
+        display: 'none'
     }
 };
-ViewBootstrap.defaultProps ={
-    className: null
-};
-ViewBootstrap.propTypes = {
-    className: PropTypes.string
-};
-export default useBootstrap(ViewBootstrap, {asdas: 'asdas'});

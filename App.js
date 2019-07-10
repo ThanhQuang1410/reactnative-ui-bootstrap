@@ -24,14 +24,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import ViewBootstrap from './src/View'
+import Div from './src/Div'
+import Input from './src/Input'
 const App = () => {
   return (
-    <ViewBootstrap className={['row','align-items-center']}>
-      <ViewBootstrap className={'col-3'} style={{backgroundColor: 'red', height: 50}}/>
-      <ViewBootstrap className={'col-9'} style={{backgroundColor: 'blue', height: 50}}/>
-      <ViewBootstrap className={'col-6'} style={{backgroundColor: 'black', height: 50}}/>
-    </ViewBootstrap>
+    <Div className={'row'}>
+      <Div className={'col-3 d-block d-md-none'} style={{backgroundColor: 'red', height: 50}} />
+      <Div className={'col-9'} style={{backgroundColor: 'blue', height: 50}}/>
+      <Div className={'col-lg-3 col-md-12 col-6 align-self-center'} style={{backgroundColor: 'black', height: 50}}/>
+      <Input className={'col-12'} descriptionInBottom={'test description'} label={'asdasd'}/>
+    </Div>
   );
 };
 

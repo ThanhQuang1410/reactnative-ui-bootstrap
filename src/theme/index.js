@@ -19,7 +19,7 @@ export class BootstrapProvider extends React.Component {
     }
 }
 
-export function useBootstrap(Component, styles) {
+export function useBootstrap(Component) {
     return class extends React.Component {
         render() {
             const { props } = this;
@@ -28,7 +28,6 @@ export function useBootstrap(Component, styles) {
                     {theme => (
                         <Component
                             {...props}
-                            styles={styles}
                         />
                     )}
                 </BootstrapContext.Consumer>
