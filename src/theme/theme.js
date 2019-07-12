@@ -6,14 +6,14 @@ export function generateStyle(className) {
     let classList = normalizeData(className);
     let styles = {};
     classList.forEach(item => {
-        if(width > 576 && width <= 768 ) {
-            if(item.includes('md')) {
-                item = item.replace('md-','');
+        if (width > 576 && width <= 768) {
+            if (item.includes('md')) {
+                item = item.replace('md-', '');
             }
         }
-        if(width > 768) {
-            if(item.includes('lg')) {
-                item = item.replace('lg-','');
+        if (width > 768) {
+            if (item.includes('lg')) {
+                item = item.replace('lg-', '');
             }
         }
         styles = {...styles, ...styleBootstrap[item]};
@@ -21,39 +21,57 @@ export function generateStyle(className) {
     return styles;
 }
 
+export const hexToRgb = (hex, opacity = 1) => {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    let rgb = result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+    if(rgb){
+        return 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + opacity + ')'
+    }
+    return hex;
+}
+
 function normalizeData(data) {
     let dataBase = data.split(' ');
     let dataWhenSplit = {};
-    dataBase.forEach(item => {
+    dataBase.forEach((item, i) => {
         let index = item.substr(0, item.indexOf('-'));
+        if(!item.includes('-')) {
+            index = item;
+        }
         if(item.includes(index)) {
             if(index !== "") {
-                let priority = getPriority(item);
+                let priority = getPriority(item, i);
                 dataWhenSplit[index] = {...dataWhenSplit[index]};
                 dataWhenSplit[index][priority] = item
             } else {
-                dataWhenSplit[item] = item
+                dataWhenSplit[item] = {...dataWhenSplit[item]};
+                dataWhenSplit[item][Date.now()] = item;
             }
         }
     });
     let dataNormalize = [];
     Object.keys(dataWhenSplit).forEach(key => {
         if(typeof dataWhenSplit[key] === "object" || typeof dataWhenSplit[key] === 'function') {
-            Object.keys(dataWhenSplit[key]).forEach(miniKey => {
+            Object.keys(dataWhenSplit[key]).sort((a,b) => {
+                return a-b
+            }).forEach(miniKey => {
                 dataNormalize.push(dataWhenSplit[key][miniKey])
             })
-        } else {
-            dataNormalize.push(dataWhenSplit[key])
         }
     });
     return dataNormalize
 }
 
-function getPriority(className) {
+function getPriority(className, i) {
     if (className.includes('md')) {
         return 1;
     } else if (className.includes('lg')) {
         return 2;
     }
-    return 0
+    let index = Date.now();
+    return (index + i) * -1
 }

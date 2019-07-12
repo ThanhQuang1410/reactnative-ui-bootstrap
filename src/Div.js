@@ -24,7 +24,7 @@ class Div extends Component {
 }
 
 Div.defaultProps ={
-    className: null
+    className: ""
 };
 Div.propTypes = {
     className: PropTypes.string

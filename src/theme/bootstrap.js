@@ -1,3 +1,15 @@
+export const theme = {
+    'color' : {
+        'PRIMARY' : '#007bff',
+        'SECONDARY' : '#6c757d',
+        'SUCCESS' : '#28a745',
+        'DANGER' : '#dc3545',
+        'WARNING' : '#ffc107',
+        'INFOR' : '#17a2b8',
+        'LIGHT' : '#f8f9fa',
+        'DARK' : '#343a40'
+    }
+};
 export const styleBootstrap = {
     'row' : {
         flexDirection: 'row',
@@ -91,5 +103,43 @@ export const styleBootstrap = {
     },
     'd-none' : {
         display: 'none'
+    },
+    'badge' : {
+        fontWeight: '700',
+        padding: 5,
+        borderRadius: 5,
+        alignSelf: 'center'
+    },
+    'badge-primary' : {
+        color: 'white',
+        backgroundColor: theme.color['PRIMARY']
+    },
+    'badge-secondary' : {
+        color: 'white',
+        backgroundColor: theme.color['SECONDARY']
+    },
+    'badge-success' : {
+        color: 'white',
+        backgroundColor: theme.color['SUCCESS']
+    },
+    'badge-danger' : {
+        color: 'white',
+        backgroundColor: theme.color['DANGER']
+    },
+    'badge-warning' : {
+        color: 'white',
+        backgroundColor: theme.color['WARNING']
+    },
+    'badge-info' : {
+        color: 'white',
+        backgroundColor: theme.color['INFOR']
+    },
+    'badge-light' : {
+        color: '#212529',
+        backgroundColor: theme.color['LIGHT']
+    },
+    'badge-dark' : {
+        color: 'white',
+        backgroundColor: theme.color['DARK']
     }
 };

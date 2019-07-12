@@ -55,6 +55,7 @@ class Input extends Component {
             descriptionInBottomStyle,
             inputStyle,
             iconFront,
+            iconBack,
             placeholderTextColor,
             label,
             labelStyle,
@@ -104,6 +105,7 @@ class Input extends Component {
                             {height: 45, paddingLeft: 7, paddingRight: 7, flexGrow: 1}
                         ]}
                     />
+                    {iconBack && iconBack}
                 </View>
                 {descriptionInBottom && <Text style={[descriptionInBottomStyle, {fontSize: 11, color: "#c3c3c3", marginTop: 5}]}>{descriptionInBottom}</Text>}
             </View>
@@ -112,7 +114,7 @@ class Input extends Component {
 }
 
 Input.defaultProps ={
-    className: null,
+    className: "",
     border: true,
     underline: false,
     round: false,
@@ -125,7 +127,8 @@ Input.defaultProps ={
     label: null,
     labelStyle: {},
     inputStyle: {},
-    iconFront: null
+    iconFront: null,
+    iconBack: null
 };
 Input.propTypes = {
     className: PropTypes.string,
@@ -141,6 +144,7 @@ Input.propTypes = {
     label: PropTypes.string,
     labelStyle: PropTypes.object,
     inputStyle: PropTypes.object,
-    iconFront: PropTypes.any
+    iconFront: PropTypes.any,
+    iconBack: PropTypes.any
 };
 export default useBootstrap(Input);
