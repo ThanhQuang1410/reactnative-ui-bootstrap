@@ -1,7 +1,22 @@
 {
-  "name": "reactnativeBootstrap",
+  "name": "reactnative-bootstrap",
+  "main": "src/index.js",
   "version": "0.0.1",
-  "private": true,
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThanhQuang1410/react-native-bootstrap"
+  },
+  "keywords": [
+    "android",
+    "ios",
+    "react native",
+    "component library",
+    "ui kit",
+    "bootstrap"
+  ],
   "scripts": {
     "start": "react-native start",
     "test": "jest",
