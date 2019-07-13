@@ -92,7 +92,6 @@ class Button extends Component {
                 disabled={disabled}
                 activeOpacity={opacity}
                 style={[
-                    style,
                     { zIndex: 2 },
                     {
                         justifyContent: "center",
@@ -120,7 +119,8 @@ class Button extends Component {
                         shadowOpacity: shadowOpacity,
                         shadowRadius: shadowRadius,
                     },
-                    styleBlock
+                    styleBlock,
+                    style
                 ]}>
                 {this.renderContent()}
             </TouchableOpacity>

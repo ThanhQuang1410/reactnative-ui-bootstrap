@@ -16,7 +16,7 @@ class Div extends Component {
         const styleBlock = generateStyle(className);
 
         return (
-            <View {...props} style={[style, styleBlock]}>
+            <View {...props} style={[styleBlock,style]}>
                 {children}
             </View>
         );

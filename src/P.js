@@ -29,7 +29,6 @@ class P extends Component {
             <Text
                 {...props}
                 style={[
-                    style,
                     h1 && { fontSize: adjust(44) },
                     h2 && { fontSize: adjust(38) },
                     h3 && { fontSize: adjust(30) },
@@ -41,6 +40,7 @@ class P extends Component {
                     italic && { fontStyle: 'italic' },
                     bold && { fontWeight: 'bold' },
                     center && { textAlign: 'center' },
+                    style,
                     styleBlock
                 ]}>
                 {children}

@@ -141,5 +141,12 @@ export const styleBootstrap = {
     'badge-dark' : {
         color: 'white',
         backgroundColor: theme.color['DARK']
+    },
+    'card-title' : {
+        fontSize: 18,
+        fontWeight: '700'
+    },
+    'card-subtitle' : {
+        color: '#c3c3c3'
     }
 };

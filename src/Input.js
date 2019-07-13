@@ -67,8 +67,8 @@ class Input extends Component {
         return (
             <View
                 style={[
-                    style,
-                    styleBlock
+                    styleBlock,
+                    style
                 ]}
             >
                 {label && <Text style={labelStyle}>{label}</Text>}
@@ -101,13 +101,13 @@ class Input extends Component {
                         onBlur={ () => this.onBlur() }
                         onFocus={ () => this.onFocus() }
                         style={[
-                            inputStyle,
-                            {height: 45, paddingLeft: 7, paddingRight: 7, flexGrow: 1}
+                            {height: 45, paddingLeft: 7, paddingRight: 7, flexGrow: 1},
+                            inputStyle
                         ]}
                     />
                     {iconBack && iconBack}
                 </View>
-                {descriptionInBottom && <Text style={[descriptionInBottomStyle, {fontSize: 11, color: "#c3c3c3", marginTop: 5}]}>{descriptionInBottom}</Text>}
+                {descriptionInBottom && <Text style={[{fontSize: 11, color: "#c3c3c3", marginTop: 5},descriptionInBottomStyle]}>{descriptionInBottom}</Text>}
             </View>
         );
     }
