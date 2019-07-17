@@ -58,11 +58,11 @@ P.defaultProps ={
     h5: false,
     p: false,
     color: null,
-    muted: false,
+    center: false,
     bold: false,
     italic: false,
     style: {},
-    size: 0
+    size: null
 };
 P.propTypes = {
     className: PropTypes.string,
@@ -74,7 +74,7 @@ P.propTypes = {
     p: PropTypes.bool,
     size: PropTypes.number,
     color: PropTypes.string,
-    muted: PropTypes.bool,
+    center: PropTypes.bool,
     bold: PropTypes.bool,
     italic: PropTypes.bool,
     style: PropTypes.any
