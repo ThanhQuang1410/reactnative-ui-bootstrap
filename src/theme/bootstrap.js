@@ -108,7 +108,7 @@ export const styleBootstrap = {
         fontWeight: '700',
         padding: 5,
         borderRadius: 5,
-        alignSelf: 'center'
+        alignSelf: 'flex-start'
     },
     'badge-primary' : {
         color: 'white',
