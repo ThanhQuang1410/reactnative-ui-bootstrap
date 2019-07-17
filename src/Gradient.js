@@ -33,8 +33,7 @@ class Gradient extends Component {
                                 left: 0,
                                 opacity: (1 / gradientLength) * (i + (gradientLength/9))
                             },
-                            !horizontal ? {width: 1, height: height} : { height: 1 , width: width}
-                        ]}
+                            !horizontal ? {width: 1, height: height} : { height: 1 , width: width}]}
                     />
                 ))}
             </View>
@@ -103,8 +102,8 @@ class Gradient extends Component {
                 {...props}
                 style={[
                     {
-                        width: gradientWidth,
-                        height: gradientHeight,
+                        width: width,
+                        height: height,
                         justifyContent: 'center',
                         alignItems: 'center'
                     },
@@ -115,21 +114,21 @@ class Gradient extends Component {
                 {this.renderFirstGradient(data, gradientBackground, gradientLength)}
                 {this.renderSecondGradient(data, gradientBackgroundSecond, gradientLength)}
                 {children &&
-                    <View
-                        style={[
-                            {
-                                position: 'absolute',
-                                top: 0,
-                                bottom: 0,
-                                right: 0,
-                                left: 0,
-                                zIndex: 3
-                            },
-                            contentStyle
-                        ]}
-                    >
-                        {children}
-                    </View>
+                <View
+                    style={[
+                        {
+                            position: 'absolute',
+                            top: 0,
+                            bottom: 0,
+                            right: 0,
+                            left: 0,
+                            zIndex: 3
+                        },
+                        contentStyle
+                    ]}
+                >
+                    {children}
+                </View>
                 }
             </View>
         )
@@ -140,8 +139,8 @@ Gradient.defaultProps ={
     height: 80,
     width: 80,
     horizontal: true,
-    firstColor : "#009FFF",
-    secondColor : "#ec2F4B",
+    firstColor : "#c94b4b",
+    secondColor : "#4b134f",
     revert : false,
     contentStyle: {}
 };
