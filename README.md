@@ -1,4 +1,4 @@
-# react-native-bootstrap
+# reactnative-ui-bootstrap
 
 Apply bootstrap style in website to your react-native project. Easy use for developer move from web dev to react-native dev.
 
@@ -7,7 +7,7 @@ Apply bootstrap style in website to your react-native project. Easy use for deve
 Easy installation.
 
 ```bash
-npm install react-native-bootstrap
+npm install reactnative-ui-bootstrap
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ If you are new in web-development, please see [Bootstrap Documents](https://getb
 <b>How to use class.</b>
 
 ```javascript
-import {Div} from 'reactnative-bootstrap'
+import {Div} from 'reactnative-ui-bootstrap'
 
 ...
       return(
