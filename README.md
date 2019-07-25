@@ -240,7 +240,7 @@ Has all default props of `Modal` Component.
 | animatePropertyName     |      null       |  `array`  | Array of style props want to animate. Example <br/> ``[{property: 'marginTop',startValue: -10, endValue: 15, animateDuration: 1000, animationDelay: 500 , easing: 'bounce'}]`` <br/> animationDelay should start from `500`. <br/> If want to 2 animations start at the same time, you should set `animationDelay` have same value. <br/> All animation easing support: `'bounce','cubic','back','elastic','ease','inOut','in','out','sin','linear','quad'`|
 | shouldStartAnimation     |      false       |  `boolean`  | Set to `true` to start animation. |
 
-### AnimatedView
+### Popup
 Has all default props of `View` Component.
 
 | Prop           |     Default     |   Type   | Description                                                                                                 |
