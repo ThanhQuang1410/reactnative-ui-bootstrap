@@ -13,10 +13,15 @@ class Popup extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         if(!this.state.showPopup && nextProps.showPopup){
-            this.setState({showPopup: nextProps.showPopup})
+            this.setState({showPopup: nextProps.showPopup});
+            return true;
+        }
+        if(this.state.showPopup && !nextProps.showPopup){
+            this.setState({showPopup: nextProps.showPopup});
             return true;
         }
         if(this.state.showPopup && !nextState.showPopup){
+            this.setState({showPopup: nextState.showPopup});
             return true;
         }
         return false;
