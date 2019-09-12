@@ -40,6 +40,14 @@ class AnimatedView extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if(nextProps.shouldStartAnimation){
+            this._animate();
+            return true;
+        }
+        return false;
+    }
+
     animateType = (animateType) => {
         switch (animateType) {
             case 'bounce' :
