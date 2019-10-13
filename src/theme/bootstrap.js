@@ -13,6 +13,7 @@ export const theme = {
 export const styleBootstrap = {
     'row' : {
         flexDirection: 'row',
+        flex: 1,
         flexWrap: 'wrap',
         overflow: 'visible',
         padding: 5

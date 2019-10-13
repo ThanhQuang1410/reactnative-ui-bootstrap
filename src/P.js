@@ -9,6 +9,7 @@ class P extends Component {
         const {
             style,
             className,
+            customClass,
             children,
             h1,
             h2,
@@ -24,7 +25,7 @@ class P extends Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
         return (
             <Text
                 {...props}

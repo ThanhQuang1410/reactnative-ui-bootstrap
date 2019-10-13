@@ -15,9 +15,10 @@ class A extends Component {
             style,
             className,
             children,
+            customClass,
             ...props
         } = this.props;
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
 
         return (
             <TouchableOpacity

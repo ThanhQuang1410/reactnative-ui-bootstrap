@@ -12,7 +12,7 @@ export class BootstrapProvider extends React.Component {
         const { children } = this.props;
 
         return (
-            <BootstrapContext.Provider value={{}}>
+            <BootstrapContext.Provider value={{customClass: this.props.customClass}}>
                 {children}
             </BootstrapContext.Provider>
         );
@@ -27,6 +27,7 @@ export function useBootstrap(Component) {
                 <BootstrapContext.Consumer>
                     {theme => (
                         <Component
+                            {...theme}
                             {...props}
                         />
                     )}
@@ -37,5 +38,6 @@ export function useBootstrap(Component) {
 }
 
 BootstrapProvider.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
+    customClass: PropTypes.any
 };

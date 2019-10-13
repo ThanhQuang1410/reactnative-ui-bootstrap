@@ -47,6 +47,7 @@ class Popup extends React.Component {
     render () {
         const {
             className,
+            customClass,
             children,
             style,
             styleContent,
@@ -58,7 +59,7 @@ class Popup extends React.Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
         if(this.state.showPopup){
             return(
                 <View>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View} from 'react-native'
+import {Text, View} from 'react-native';
 import {useBootstrap} from "./theme/index";
 import PropTypes from 'prop-types';
 import { generateStyle } from "./theme/theme";
@@ -77,6 +77,7 @@ class Gradient extends Component {
         const {
             style,
             className,
+            customClass,
             children,
             height,
             width,
@@ -88,7 +89,7 @@ class Gradient extends Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
         let gradientHeight = horizontal ? height : width;
         let gradientWidth = horizontal ? width : height;
 
@@ -127,7 +128,10 @@ class Gradient extends Component {
                         contentStyle
                     ]}
                 >
-                    {children}
+                    {typeof children === 'string' ?
+                        <Text>{children}</Text> :
+                        children
+                    }
                 </View>
                 }
             </View>

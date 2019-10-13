@@ -33,7 +33,7 @@ class Button extends Component {
                         (disabled ? hexToRgb(backGround,0.8) : backGround) :
                         (disabled ? hexToRgb(theme.color[type.toUpperCase()], 0.8) : theme.color[type.toUpperCase()]))  :
                     (disabled ? hexToRgb('#fff',0.8) : 'white')
-            }, textStyle];
+        }, textStyle];
 
         let content = children;
         const isString = children && typeof children === 'string';
@@ -64,6 +64,7 @@ class Button extends Component {
         const {
             style,
             className,
+            customClass,
             disabled,
             type,
             opacity,
@@ -84,7 +85,7 @@ class Button extends Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
 
         return (
             <TouchableOpacity

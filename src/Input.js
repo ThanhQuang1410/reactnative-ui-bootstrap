@@ -51,6 +51,7 @@ class Input extends Component {
         const {
             style,
             className,
+            customClass,
             descriptionInBottom,
             descriptionInBottomStyle,
             inputStyle,
@@ -62,7 +63,7 @@ class Input extends Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
 
         return (
             <View

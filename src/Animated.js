@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Animated, Easing , View } from 'react-native';
+import {Animated, Easing, Text, View} from 'react-native';
 import {useBootstrap} from "./theme/index";
 import PropTypes from 'prop-types';
 import { generateStyle } from "./theme/theme";
@@ -91,6 +91,7 @@ class AnimatedView extends Component {
     render () {
         const {
             className,
+            customClass,
             children,
             animatePropertyName,
             ...props
@@ -100,12 +101,12 @@ class AnimatedView extends Component {
         if(animatePropertyName) {
             animatePropertyName.forEach(animation => {
                 style[animation.property] = this[animation.property].interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [animation.startValue, animation.endValue]
-                    });
+                    inputRange: [0, 1],
+                    outputRange: [animation.startValue, animation.endValue]
+                });
             })
         }
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
 
         return (
             <Animated.View
@@ -115,7 +116,10 @@ class AnimatedView extends Component {
                 ]}
                 {...props}
             >
-                {children}
+                {typeof children === 'string' ?
+                    <Text>{children}</Text> :
+                    children
+                }
             </Animated.View>
         );
     }

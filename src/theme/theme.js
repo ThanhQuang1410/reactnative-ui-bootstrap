@@ -2,7 +2,7 @@ import {Dimensions} from 'react-native'
 import {styleBootstrap} from "./bootstrap";
 const width = Dimensions.get('screen').width;
 
-export function generateStyle(className) {
+export function generateStyle(className,customClass={}) {
     let classList = normalizeData(className);
     let styles = {};
     classList.forEach(item => {
@@ -17,6 +17,10 @@ export function generateStyle(className) {
             }
         }
         styles = {...styles, ...styleBootstrap[item]};
+        if(customClass.hasOwnProperty(item)) {
+            console.log({...customClass[item]})
+            styles = {...styles, ...styleBootstrap[item], ...customClass[item]};
+        }
     });
     return styles;
 }

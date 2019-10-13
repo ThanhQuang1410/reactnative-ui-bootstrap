@@ -36,6 +36,7 @@ class Card extends Component {
         const {
             style,
             className,
+            customClass,
             children,
             imageHeader,
             imageHeaderSource,
@@ -55,7 +56,7 @@ class Card extends Component {
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
         return (
             <View
                 {...props}
@@ -86,16 +87,16 @@ class Card extends Component {
                     this.renderImage(imageHeaderHeight, imageHeaderSource, styleImageHeader, imageHeader)
                 }
                 {children &&
-                    <View
-                        style={[
-                            {
-                                padding: 10
-                            },
-                            styleContent
-                        ]}
-                    >
-                        {children}
-                    </View>
+                <View
+                    style={[
+                        {
+                            padding: 10
+                        },
+                        styleContent
+                    ]}
+                >
+                    {children}
+                </View>
                 }
                 {
                     imageBottom &&

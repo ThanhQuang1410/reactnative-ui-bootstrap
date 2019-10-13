@@ -1,12 +1,35 @@
 # reactnative-ui-bootstrap
-<p align="center">
 Apply bootstrap style like website to your react-native project. Easy use for developers move from web-development to react-native development. Ready-made components help you save time in styling components. Enjoy!
-</p>
-<p align="center">
-  <img src="screenshots/preview.png">
-</p>
-  
-  
+
+<img src="screenshots/preview.png">
+
+## New update 💛
+
+Some adjust allow you to provide global style
+
+Step 1: create an ``style`` file. Don't forget to export it :)
+```
+export const customStyle = {
+    'your class name' : {...your style}
+}
+``` 
+
+Step 2: import ``style`` you've just created and wrap your App with ``BootstrapProvider`` (That depends on the range you want to use)
+```
+import {BootstrapProvider} from 'reactnative-ui-bootstrap';
+import customStyle from 'your-path';
+...
+      return(
+        <BootstrapProvider customClass={customStyle}>
+          <Div className={'your-custom-class'}>
+            ...Some content here
+          </Div>
+        </BootstrapProvider>
+      )
+...
+
+```
+Feel free to feed back me at [GitHub](https://github.com/ThanhQuang1410/reactnative-ui-bootstrap/issues) about this update 
 ## Installation
 
 Easy installation.

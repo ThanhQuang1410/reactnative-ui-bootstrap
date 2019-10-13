@@ -1,5 +1,5 @@
 import React, { Component }  from 'react'
-import {View} from 'react-native'
+import {View, Text} from 'react-native'
 import {useBootstrap} from "./theme/index";
 import PropTypes from 'prop-types';
 import { generateStyle } from "./theme/theme";
@@ -10,14 +10,18 @@ class Div extends Component {
             style,
             className,
             children,
+            customClass,
             ...props
         } = this.props;
 
-        const styleBlock = generateStyle(className);
+        const styleBlock = generateStyle(className,customClass);
 
         return (
             <View {...props} style={[styleBlock,style]}>
-                {children}
+                {typeof children === 'string' ?
+                    <Text>{children}</Text> :
+                    children
+                }
             </View>
         );
     }
