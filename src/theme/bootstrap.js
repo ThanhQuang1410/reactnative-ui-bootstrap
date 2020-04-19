@@ -54,11 +54,17 @@ export const styleBootstrap = {
     'col-4' : {
         width: (100/3) + "%"
     },
+    'col-5' : {
+        width: (100*5/12) + "%"
+    },
     'col-6' : {
         width: (100/2) + "%"
     },
     'col-8' : {
         width: (100*2/3) + "%"
+    },
+    'col-7' : {
+        width: (100*7/12) + "%"
     },
     'col-9' : {
         width: (100*3/4) + "%"
