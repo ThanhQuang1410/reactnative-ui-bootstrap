@@ -102,8 +102,8 @@ class Input extends Component {
                         onBlur={ () => this.onBlur() }
                         onFocus={ () => this.onFocus() }
                         style={[
-                            inputStyle,
-                            {height: 45, paddingLeft: 7, paddingRight: 7, flexGrow: 1, color: 'black'}
+                            {height: 45, paddingLeft: 7, paddingRight: 7, flexGrow: 1, color: 'black'},
+                            inputStyle
                         ]}
                     />
                     {iconBack && iconBack}
