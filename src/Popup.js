@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Dimensions , Modal, TouchableOpacity , View , Text } from 'react-native';
+import { StyleSheet, Dimensions , Modal, TouchableOpacity , View , Text , Animated } from 'react-native';
 import {generateStyle} from "./theme/theme";
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -79,7 +79,7 @@ class Popup extends React.Component {
                                 style
                             ]}
                         >
-                            <View
+                            <Animated.View
                                 style={[
                                     styles.dialog,
                                     {width: popUpWidth},
@@ -107,7 +107,7 @@ class Popup extends React.Component {
                                     </TouchableOpacity>
                                 }
                                 {children}
-                            </View>
+                            </Animated.View>
                             {exitWithOutsideClick && <TouchableOpacity style={{flexGrow: 1, width: '100%'}} onPress={() => {this.handleClosePopup()}}/>}
                         </View>
                     </Modal>
