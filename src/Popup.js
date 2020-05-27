@@ -24,6 +24,9 @@ class Popup extends React.Component {
             this.setState({showPopup: nextState.showPopup});
             return true;
         }
+        if (this.props.shouldUpdate) {
+            return true;
+        }
         return false;
     }
 
@@ -126,7 +129,8 @@ Popup.defaultProps = {
     exitWithOutsideClick: true,
     popupBackground: '#00000033',
     popUpPosition: 'middle',
-    customExitButton: null
+    customExitButton: null,
+    shouldUpdate: false
 };
 
 Popup.propTypes = {
@@ -137,7 +141,8 @@ Popup.propTypes = {
     showPopup: PropTypes.bool,
     popupBackground: PropTypes.string,
     popUpPosition: PropTypes.string,
-    customExitButton: PropTypes.any
+    customExitButton: PropTypes.any,
+    shouldUpdate: PropTypes.bool
 };
 const styles = StyleSheet.create({
     container:{
