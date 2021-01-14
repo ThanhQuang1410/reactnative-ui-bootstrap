@@ -6,14 +6,24 @@ export function generateStyle(className,customClass={}) {
     let classList = normalizeData(className);
     let styles = {};
     classList.forEach(item => {
-        if (width > 576 && width <= 768) {
+        if (width >= 576) {
+            if (item.includes('sm')) {
+                item = item.replace('sm-', '');
+            }
+        }
+        if (width >= 768) {
             if (item.includes('md')) {
                 item = item.replace('md-', '');
             }
         }
-        if (width > 768) {
+        if (width >= 992) {
             if (item.includes('lg')) {
                 item = item.replace('lg-', '');
+            }
+        }
+        if (width >= 1200) {
+            if (item.includes('xl')) {
+                item = item.replace('xl-', '');
             }
         }
         styles = {...styles, ...styleBootstrap[item]};

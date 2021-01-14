@@ -18,32 +18,42 @@ export const styleBootstrap = {
         overflow: 'visible',
         padding: 5
     },
+    'column' : {
+        flexDirection: 'column',
+        flex: 1
+    },
     'align-items-center' : {
-        justifyContent: 'center',
         alignItems: 'center'
     },
     'align-items-start' : {
-        justifyContent: 'flex-start',
         alignItems: 'flex-start'
     },
     'align-items-end' : {
-        justifyContent: 'flex-end',
         alignItems: 'flex-end'
     },
     'align-self-start' : {
-        alignSelf: 'flex-start',
-        justifySelf: 'flex-start'
+        alignSelf: 'flex-start'
     },
     'align-self-center' : {
-        alignSelf: 'center',
-        justifySelf: 'center'
+        alignSelf: 'center'
     },
     'align-self-end' : {
-        alignSelf: 'flex-end',
-        justifySelf: 'flex-end'
+        alignSelf: 'flex-end'
+    },
+    'justify-content-center' : {
+        justifyContent: 'center'
+    },
+    'justify-content-end' : {
+        justifyContent: 'flex-end'
+    },
+    'justify-content-start' : {
+        justifyContent: 'flex-start'
     },
     'col' : {
         flexGrow: 1
+    },
+    'col-1' : {
+        width: (100/12) + "%"
     },
     'col-2' : {
         width: (100/6) + "%"
@@ -68,6 +78,12 @@ export const styleBootstrap = {
     },
     'col-9' : {
         width: (100*3/4) + "%"
+    },
+    'col-10' : {
+        width: (100*10/12) + "%"
+    },
+    'col-11' : {
+        width: (100*11/12) + "%"
     },
     'col-12' : {
         width: "100%"
@@ -155,5 +171,29 @@ export const styleBootstrap = {
     },
     'card-subtitle' : {
         color: '#c3c3c3'
+    },
+    'mb-0' : {
+        marginBottom: 0
+    },
+    'mt-0' : {
+        marginTop: 0
+    },
+    'mr-0' : {
+        marginRight: 0
+    },
+    'ml-0' : {
+        marginLeft: 0
+    },
+    'pb-0' : {
+        paddingBottom: 0
+    },
+    'pt-0' : {
+        paddingTop: 0
+    },
+    'pr-0' : {
+        paddingRight: 0
+    },
+    'pl-0' : {
+        paddingLeft: 0
     }
 };

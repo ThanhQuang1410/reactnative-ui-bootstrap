@@ -5,30 +5,8 @@ Apply bootstrap style like website to your react-native project. Easy use for de
 
 ## New update 💛
 
-Some adjust allow you to provide global style
+Support more break-point: `sm`,`md`,`lg`,`xl`.
 
-Step 1: create an ``style`` file. Don't forget to export it :)
-```
-export const customStyle = {
-    'your class name' : {...your style}
-}
-``` 
-
-Step 2: import ``style`` you've just created and wrap your App with ``BootstrapProvider`` (That depends on the range you want to use)
-```
-import {BootstrapProvider} from 'reactnative-ui-bootstrap';
-import customStyle from 'your-path';
-...
-      return(
-        <BootstrapProvider customClass={customStyle}>
-          <Div className={'your-custom-class'}>
-            ...Some content here
-          </Div>
-        </BootstrapProvider>
-      )
-...
-
-```
 Feel free to feed back me at [GitHub](https://github.com/ThanhQuang1410/reactnative-ui-bootstrap/issues) about this update 
 ## Installation
 
@@ -40,33 +18,6 @@ npm install reactnative-ui-bootstrap
 
 ## Usage
 If you are new in web-development, please see [Bootstrap Documents](https://getbootstrap.com/docs/4.0/layout/overview/). If you've already have experience in web-development, please Enjoy!
-
-| Support Class                    |               Breakpoint Support                | Support Class                    |               Breakpoint Support                |
-| -------------------------------- | :---------------------------------------------: | -------------------------------- | :---------------------------------------------: |
-| ``row``                          | ``md`` and ``lg``                               |``d-block``                       | ``md`` and ``lg``                               |
-| ``col``                          | ``md`` and ``lg``                               |``d-none``                        | ``md`` and ``lg``                               |
-| ``col-2``                        | ``md`` and ``lg``                               |``badge``                         | no support .                                    |
-| ``col-3``                        | ``md`` and ``lg``                               |``badge-primary``                 | no support .                                    |
-| ``col-4``                        | ``md`` and ``lg``                               |``badge-secondary``               | no support .                                    |
-| ``col-6``                        | ``md`` and ``lg``                               |``badge-success``                 | no support .                                    |
-| ``col-8``                        | ``md`` and ``lg``                               |``badge-danger``                  | no support .                                    |
-| ``col-9``                        | ``md`` and ``lg``                               |``badge-warning``                 | no support .                                    |
-| ``col-12``                       | ``md`` and ``lg``                               |``badge-info``                    | no support .                                    |
-| ``offset-1``                     | ``md`` and ``lg``                               |``badge-light``                   | no support .                                    |
-| ``offset-2``                     | ``md`` and ``lg``                               |``badge-dark``                    | no support .                                    |
-| ``offset-3``                     | ``md`` and ``lg``                               |``badge-light``                   | no support .                                    |
-| ``offset-4``                     | ``md`` and ``lg``                               |``card-title``                    | no support .                                    |
-| ``offset-5``                     | ``md`` and ``lg``                               |``card-subtitle``                 | no support .                                    |
-| ``offset-6``                     | ``md`` and ``lg``                               |``align-items-start``             | no support .                                    |
-| ``offset-7``                     | ``md`` and ``lg``                               |``align-items-center``            | no support .                                    | 
-| ``offset-8``                     | ``md`` and ``lg``                               |``align-items-end``               | no support .                                    | 
-| ``offset-9``                     | ``md`` and ``lg``                               |``align-self-start``              | no support .                                    |
-| ``offset-10``                    | ``md`` and ``lg``                               |``align-self-center``             | no support .                                    | 
-| ``offset-11``                    | ``md`` and ``lg``                               |``align-self-end``                | no support .                                    | 
-
-``md`` for break point when device width value is greater 576 and less or equal 768.
-<br/>
-``lg`` for break point when device width value is greater 768.
 
 <b>How to use class.</b>
 
