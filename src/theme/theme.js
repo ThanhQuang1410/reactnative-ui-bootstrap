@@ -1,10 +1,11 @@
 import {Dimensions} from 'react-native'
 import {styleBootstrap} from "./bootstrap";
-const width = Dimensions.get('screen').width;
 
 export function generateStyle(className,customClass={}) {
     let classList = normalizeData(className);
     let styles = {};
+    const width = Dimensions.get('screen').width;
+
     classList.forEach(item => {
         if (width >= 576) {
             if (item.includes('sm')) {
